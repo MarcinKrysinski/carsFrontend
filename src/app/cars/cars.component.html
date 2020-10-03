@@ -1,0 +1,37 @@
+<p>cars works! {{cars|json}}</p>
+
+<h2>My Cars</h2>
+<ul class="cars">
+  <li *ngFor="let car of cars">
+    <a routerLink="/details-car/{{car.id}}">
+      <span class="badge">{{car.id}}</span> {{car.mark}} {{car.model}} {{car.color}}
+    </a>
+    <a routerLink="/details-car/{{car.id}}"><button>update</button></a>
+    <button (click)="deleteCar(car.id)">delete</button>
+  </li>
+</ul>
+<a routerLink="/add-car"><button>Add new</button></a>
+
+<div>
+  <h2> Add New Car </h2>
+  <div>
+    <label>id:
+      <input [(ngModel)]="car.id" placeholder="id" type="number" />
+    </label>
+    <br>
+    <label>make:
+      <input [(ngModel)]="car.mark" placeholder="make" />
+    </label>
+    <br>
+    <label>model:
+      <input [(ngModel)]="car.model" placeholder="model" />
+    </label>
+    <br>
+    <label>colour:
+      <input [(ngModel)]="car.color" placeholder="colour" />
+    </label>
+  </div>
+  <button (click)="saveCar()">Save</button>
+</div>
+
+
