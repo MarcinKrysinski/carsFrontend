@@ -3,12 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import {Router, RouterModule, Routes} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import { CarsComponent } from './cars/cars.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { DetailsCarComponent } from './details-car/details-car.component';
-import {UpdateCarComponent} from './update-car/update-car.component';
 
 
 
@@ -38,7 +37,6 @@ const appRoutes: Routes = [
     AppComponent,
     NotFoundComponent,
     CarsComponent,
-    UpdateCarComponent,
     DetailsCarComponent
   ],
   imports: [

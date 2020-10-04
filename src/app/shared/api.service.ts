@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpEvent} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Car} from '../model/car';
-import { HttpHeaders } from '@angular/common/http';
+
 
 
 @Injectable({
@@ -17,16 +17,6 @@ export class ApiService {
      return this.http.get<Car[]>(this.BASE_URL);
   }
 
-  // const httpOptions = {
-  //   headers: new HttpHeaders({
-  //     'Content-Type':  'application/json',
-  //     Authorization: 'my-auth-token'
-  //   })
-  // };
-
-  getCarById(id: string): Observable<Car[]>{
-    return this.http.get<Car[]>(this.BASE_URL + '/' + id);
-  }
   getCar(id: number): Observable<Car> {
     const url = `${this.BASE_URL}/${id}`;
     return this.http.get<Car>(url);
@@ -44,6 +34,6 @@ export class ApiService {
   }
 
   updateCar(car: Car): Observable<Car> {
-    return this.http.post<Car>(this.BASE_URL, car);
+    return this.http.put<Car>(this.BASE_URL, car);
   }
 }

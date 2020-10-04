@@ -1,8 +1,13 @@
 <h1>Details</h1>
-<div *ngIf="car">
+<!--<div *ngIf="car">-->
+<div>
   <h2>{{car.mark | uppercase}} {{car.model | uppercase}} </h2>
-  <div><span>id: </span>{{car.id}}</div>
+<!--  <div><span>id: </span>{{car.id}}</div>-->
   <div>
+    <label>id:
+      <input [(ngModel)]="car.id" placeholder="id" />
+    </label>
+    <br>
     <label>mark:
       <input [(ngModel)]="car.mark" placeholder="mark" />
     </label>

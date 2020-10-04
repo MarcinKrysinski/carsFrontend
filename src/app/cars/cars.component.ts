@@ -12,7 +12,6 @@ import { Location } from '@angular/common';
 export class CarsComponent implements OnInit {
 
   cars: Car[] = [];
-  // car: Car;
   public car = {} as Car;
 
   constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router, private location: Location) { }
@@ -38,7 +37,6 @@ export class CarsComponent implements OnInit {
         this.car = {} as Car;
       }
     );
-    // this.router.navigate(['/cars']);
     window.location.reload();
   }
 
@@ -49,9 +47,5 @@ export class CarsComponent implements OnInit {
       }
     );
   }
-
-  // updateCar(): void {
-  //   this.apiService.updateCar(this.car).subscribe();
-  //     }
 
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Car} from '../model/car';
 import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
 import {ApiService} from '../shared/api.service';
 import { Location } from '@angular/common';
 
@@ -34,9 +33,11 @@ export class DetailsCarComponent implements OnInit {
     this.location.back();
   }
 
-  update(updatedCar: Car) {
+  update(updatedCar: Car): void {
     this.apiService.updateCar(updatedCar).subscribe(
-      res => {}
+      res => {
+        this.car = updatedCar;
+      }
     );
     this.location.back();
   }
